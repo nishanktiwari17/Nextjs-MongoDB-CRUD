@@ -10,7 +10,7 @@ handler.post((req,res) => {
     var student = new Admission({Firstname, Lastname, Address, FatherFullName, MotherFullName, RollNo, Standard, Hobbies})
     student.save((err,response) => {
         if(err){
-            res.status(400).json({ success: 'err' })
+            res.status(400).json({ success: 'error' })
         } else {
             res.status(200).json({success: true, data: response})
         }
