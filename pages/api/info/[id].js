@@ -9,7 +9,7 @@ handler.get((req,res) => {
     const { query: { id } } = req;
     Admission.findById(id, (err,data) => {
         if(err){
-            return res.status(400).json({error: false})
+            return res.status(400).json({error: true})
         } else {
         return res.status(200).json({data : data});
         }
@@ -23,7 +23,7 @@ handler.put((req,res) => {
         if(err){
             return res.status(400).json({error: true})
         } else {
-            return res.status(200).json({success: true, data: data})
+            return res.status(200).json({success:`Data with id ${id} updated successfully`, data: data})
         }
     } )
 });
